@@ -90,7 +90,7 @@ d3.text(file,
             ;
 
         });
-}//main
+}
                   
 var svg = d3.select(".chart")
     .attr("width", width + margin.right + margin.left)
