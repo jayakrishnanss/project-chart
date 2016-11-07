@@ -2,8 +2,8 @@ var w = window,
     d = document,
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
-    x = 1855,
-    y = 971;
+    x = 1400,
+    y = 900;
 
 var margin = {
         top: 20,
@@ -11,7 +11,7 @@ var margin = {
         bottom: 20,
         left: 20
     },
-    width = (x - margin.right - margin.left - 500),
+    width = (x - margin.right - margin.left - 200),
     height = .8 * (y - margin.top - margin.bottom);
 var root;
 var names;
@@ -26,12 +26,12 @@ var galaxy = d3.layout.galaxy()
     });
 var color_hash = [{
     name: 'Project',
-    color: '#AB1F20'
+    color: '#1F77B4'
 }, {
     name: 'Module',
     color: '#2CA02C'
 }, {
-    name: 'Sub Module',
+    name: 'Components',
     color: '#FF7F0E'
 }];
 
@@ -153,7 +153,7 @@ var legend = svg.append("g")
 
 for (var i = 0; i < color_hash.length; i++) {
     legend.append("rect")
-        .attr("transform", "translate("+(width-160)+"," + 20 * i + ")")
+        .attr("transform", "translate("+(width-10)+"," + 20 * i + ")")
         .attr("width", 10)
         .attr("height", 10)
         .style("fill", function(d) {
@@ -162,7 +162,7 @@ for (var i = 0; i < color_hash.length; i++) {
 
     legend.append("text")
         .attr("y", 10)
-        .attr("transform", "translate("+(width-165)+"," + 20 * i + ")")
+        .attr("transform", "translate("+(width-20)+"," + 20 * i + ")")
         .text(function(d) {
             return color_hash[i].name
         });
