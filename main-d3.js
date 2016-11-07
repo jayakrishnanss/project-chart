@@ -2,13 +2,12 @@ var w = window,
     d = document,
     e = d.documentElement,
     g = d.getElementsByTagName('body')[0],
-    x = w.innerWidth || e.clientWidth || g.clientWidth,
-    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    x = 1855,
+    y = 971;
 
 var margin = {top: 20, right: 20, bottom: 20, left: 20},
     width = (x - margin.right - margin.left),
     height = .8* (y - margin.top - margin.bottom);
-
 var root;
 var names;
 var rows;
@@ -37,7 +36,7 @@ d3.text(file,
                 }
             });
 
-            root = unflatten(rows, "Project Name");
+            root = unflatten(rows, "Service Power");
 
             var lines = d3.svg.line(); // unused !
             var nodes = galaxy.nodes(root);
@@ -81,7 +80,24 @@ d3.text(file,
                 })
             ;
             node.append("circle")
-                .attr("r", function(d) { return d.r; })
+                .attr("r", function(d) { 
+                    switch(d.name){
+                        case 'Service Power':
+                            return 93.83149865783702;
+                        break;
+                        case 'Login':
+                            return 55.54039805048281;
+                        break;
+                        case 'Home':
+                            return 55.54039805048281;
+                        break;
+                        case 'Result':
+                            return 55.54039805048281;
+                        break;
+                        default:
+                            return 31
+                    }
+                })
             ;
             node.append("text")
                 .attr("dy", ".3em")

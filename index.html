@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="UTF-8"> 
-  <title> Project Chart</title>
+  <title>Service Power</title>
   <script src="libs/jquery.min.js"></script>
   <script src="libs/d3.js"></script>
   <script src="libs/galaxy.js"></script>
@@ -16,7 +16,7 @@
     
     .chart text {
       fill: black;
-      font: 11px sans-serif;
+      font: 16px sans-serif;
       text-anchor: end;
       font-weight: bold;
     }
@@ -32,14 +32,14 @@
       fill: #FF7F0E;
       fill-opacity: 1;
     }
-    
-    text {
-      font: 10px sans-serif;
+    .leaf text{
+      font: 12px sans-serif;
+      font-weight: bold;
     }
 
     .link {
-      stroke: #999;
-      stroke-opacity: .6;
+      stroke: #000;
+      stroke-opacity: 0.5;
     }
     
   </style>
@@ -48,7 +48,7 @@
   <svg class="chart"></svg>
   <script src="main-d3.js"></script>
   <script type="text/javascript"> 
-    main("data/Federal_Budget.csv"); 
+    main("data/service_power.csv"); 
   </script>
 
 </body>
