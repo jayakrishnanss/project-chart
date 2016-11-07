@@ -7,6 +7,7 @@
   <script src="libs/jquery.min.js"></script>
   <script src="libs/d3.js"></script>
   <script src="libs/galaxy.js"></script>
+   <script src="libs/legend.js"></script>
   <script src="main-d3.js"></script>
   <style>
     
@@ -20,7 +21,12 @@
       text-anchor: end;
       font-weight: bold;
     }
-    
+    .legend text{
+      fill: black;
+      font: 14px sans-serif;
+      text-anchor: end;
+      font-weight: bold;
+    }
     circle {
       fill: #2CA02C;
       fill-opacity: .75;
@@ -32,6 +38,10 @@
       fill: #FF7F0E;
       fill-opacity: 1;
     }
+    .main-node circle {
+      fill: #AB1F20;
+      fill-opacity: 1;
+    }
     .leaf text{
       font: 12px sans-serif;
       font-weight: bold;
@@ -41,11 +51,17 @@
       stroke: #000;
       stroke-opacity: 0.5;
     }
+    #my-div{
+      border-style: solid;
+      border-width: 1px;
+    }
     
   </style>
 </head>
 <body>
-  <svg class="chart"></svg>
+  <div id="my-div">
+    <svg class="chart"></svg>
+  </div>
   <script src="main-d3.js"></script>
   <script type="text/javascript"> 
     main("data/service_power.csv"); 
